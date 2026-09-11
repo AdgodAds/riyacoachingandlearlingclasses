@@ -51,8 +51,6 @@ fbq('init', '1420808503483015');
 fbq('track', 'PageView');
 
 </script>
-
-
 <!-- Meta Pixel NoScript -->
 
 <noscript>
@@ -897,10 +895,35 @@ h1{
 
 
             /*
-             * CUSTOM DOWNLOAD EVENT
+             * META PIXEL CONVERSION EVENTS
              */
 
             if(typeof fbq === 'function'){
+
+                /*
+                 * Standard Lead event
+                 * This is the main conversion event.
+                 */
+
+                fbq(
+                    'track',
+                    'Lead',
+                    {
+                        content_name:
+                            'Application Download',
+
+                        content_category:
+                            'App Download',
+
+                        content_type:
+                            'product'
+                    }
+                );
+
+
+                /*
+                 * Custom Download event
+                 */
 
                 fbq(
                     'trackCustom',
@@ -914,23 +937,6 @@ h1{
 
                         content_url:
                             downloadURL
-                    }
-                );
-
-
-                /*
-                 * LEAD EVENT
-                 */
-
-                fbq(
-                    'track',
-                    'Lead',
-                    {
-                        content_name:
-                            'Application Download',
-
-                        content_category:
-                            'App Download'
                     }
                 );
 
@@ -958,7 +964,7 @@ h1{
                         downloadURL;
 
                 },
-                500
+                1000
             );
 
         }
