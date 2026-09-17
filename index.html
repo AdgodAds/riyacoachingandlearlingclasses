@@ -1,980 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>786 – Online App</title>
 
-<meta name="theme-color" content="#070c20">
-<meta name="description"
-      content="Download our official application. Fast, secure and easy to use.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<title>Education And Learning</title>
-
-
-<!-- =========================================================
-     META PIXEL
-========================================================= -->
-
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
-{
-    if(f.fbq)return;
-
-    n=f.fbq=function(){
-        n.callMethod ?
-        n.callMethod.apply(n,arguments) :
-        n.queue.push(arguments)
-    };
-
-    if(!f._fbq)f._fbq=n;
-
-    n.push=n;
-    n.loaded=!0;
-    n.version='2.0';
-    n.queue=[];
-
-    t=b.createElement(e);
-    t.async=!0;
-    t.src=v;
-
-    s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s);
-
-}
-(window, document, 'script',
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-
 fbq('init', '1420808503483015');
-
-/* Page View */
 fbq('track', 'PageView');
-
 </script>
-<!-- Meta Pixel NoScript -->
-
-<noscript>
-<img
-    height="1"
-    width="1"
-    style="display:none"
-    src="https://www.facebook.com/tr?id=1420808503483015&ev=PageView&noscript=1"
-/>
-</noscript>
-
-<!-- END META PIXEL -->
-
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1420808503483015&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html,
-body{
-    min-height:100%;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
-
-    min-height:100vh;
-
-    overflow-x:hidden;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    color:#e6efff;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 12%,
-            rgba(30,110,200,.24),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 50% 70%,
-            rgba(40,70,170,.14),
-            transparent 40%
-        ),
-
-        linear-gradient(
-            180deg,
-            #05091b 0%,
-            #0a122b 50%,
-            #05091a 100%
-        );
+  min-height:100vh;
+  background:#04061a;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  color:#fff;
+  overflow:hidden;
 }
 
-
-/* BACKGROUND GRID */
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    opacity:.30;
-
-    background-image:
-
-        linear-gradient(
-            rgba(75,120,190,.14) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(75,120,190,.14) 1px,
-            transparent 1px
-        );
-
-    background-size:72px 72px;
+#starCanvas{
+  position:fixed;
+  inset:0;
+  z-index:0;
 }
-
-
-/* PAGE */
-
-.page{
-
-    width:100%;
-
-    min-height:100vh;
-
-    padding:
-        100px 20px 30px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-}
-
-
-/* CARD */
 
 .card{
-
-    position:relative;
-
-    width:100%;
-
-    max-width:680px;
-
-    padding:
-        78px 48px 54px;
-
-    border-radius:58px;
-
-    border:
-        1px solid
-        rgba(99,92,220,.48);
-
-    background:
-
-        radial-gradient(
-            circle at 50% 12%,
-            rgba(30,112,190,.18),
-            transparent 29%
-        ),
-
-        linear-gradient(
-            145deg,
-            rgba(22,36,83,.97),
-            rgba(16,28,71,.98)
-        );
-
-    box-shadow:
-
-        inset
-        0 0 0 1px
-        rgba(30,92,180,.10),
-
-        0 30px 80px
-        rgba(0,0,0,.45),
-
-        0 0 65px
-        rgba(40,80,210,.14);
-
-    overflow:hidden;
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:420px;
+  background:linear-gradient(180deg,#121a4d,#0a1038);
+  border-radius:26px;
+  padding:26px 22px 30px;
+  box-shadow:0 25px 60px rgba(0,0,0,.6);
+  backdrop-filter:blur(6px);
 }
 
-
-/* LOGO */
-
-.logo-wrap{
-
-    position:relative;
-
-    width:252px;
-    height:252px;
-
-    margin:
-        0 auto 55px;
-
-    border-radius:54px;
-
-    background:#fff;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    box-shadow:
-
-        0 0 0 1px
-        rgba(99,203,255,.55),
-
-        0 0 35px
-        rgba(37,177,255,.36),
-
-        0 0 75px
-        rgba(37,124,255,.15);
-
-    overflow:hidden;
+.header{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  margin-bottom:14px;
 }
 
-
-/* CLOUDINARY LOGO */
-
-.logo-wrap img{
-
-    position:relative;
-
-    z-index:2;
-
-    display:block;
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    border-radius:54px;
-
+.logo{
+  width:60px;
+  height:60px;
+  border-radius:16px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 30px rgba(255,215,0,.7);
 }
 
+.logo img{width:48px;}
 
-/* LOGO OUTER RING */
-
-.logo-wrap::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:284px;
-
-    height:284px;
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(45,196,255,.38);
-
-    box-shadow:
-        0 0 25px
-        rgba(40,171,255,.12);
+.header h1{
+  font-size:22px;
+  font-weight:800;
 }
 
-
-/* TITLE */
-
-h1{
-
-    text-align:center;
-
-    font-size:49px;
-
-    line-height:1.08;
-
-    letter-spacing:7px;
-
-    font-weight:700;
-
-    white-space:nowrap;
-
-    color:#38a9ff;
-
-    text-shadow:
-        0 0 18px
-        rgba(47,164,255,.25);
+.header span{
+  display:block;
+  font-size:12px;
+  font-weight:600;
+  color:#ffd84d;
 }
-
-
-/* TAGLINE */
 
 .tagline{
-
-    margin-top:24px;
-
-    text-align:center;
-
-    font-family:Arial,sans-serif;
-
-    font-size:18px;
-
-    letter-spacing:6px;
-
-    color:#76729d;
+  font-size:15px;
+  font-weight:600;
+  margin:14px 0 18px;
 }
 
-
-/* DIVIDER */
-
-.divider{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:25px;
-
-    margin:
-        58px 0 50px;
+.features{
+  background:rgba(255,255,255,.06);
+  border-radius:18px;
+  padding:18px;
 }
 
-.divider::before,
-.divider::after{
-
-    content:"";
-
-    height:1px;
-
-    flex:1;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(92,79,197,.48)
-        );
+.features li{
+  list-style:none;
+  margin-bottom:10px;
+  font-size:14px;
+  display:flex;
+  gap:8px;
 }
 
-.divider::after{
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(92,79,197,.48),
-            transparent
-        );
+.features li::before{
+  content:"✔";
+  color:#00ff9d;
 }
-
-
-.diamond{
-
-    width:10px;
-
-    height:10px;
-
-    transform:rotate(45deg);
-
-    background:#6944c5;
-
-    box-shadow:
-        0 0 14px
-        rgba(115,74,255,.7);
-}
-
-
-/* STATS */
 
 .stats{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:18px;
+  display:flex;
+  gap:12px;
+  margin:20px 0;
 }
-
 
 .stat{
-
-    min-height:162px;
-
-    border-radius:28px;
-
-    border:
-        1px solid
-        rgba(78,85,174,.38);
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(29,42,91,.72),
-            rgba(22,34,79,.74)
-        );
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
+  flex:1;
+  background:rgba(255,255,255,.05);
+  border-radius:16px;
+  padding:14px;
+  text-align:center;
 }
 
-
-.stat strong{
-
-    font-size:34px;
-
-    font-weight:500;
-
-    color:#e2edff;
+.stat h2{
+  font-size:18px;
+  font-weight:800;
 }
 
-
-.stat span{
-
-    margin-top:24px;
-
-    font-family:Arial,sans-serif;
-
-    font-size:15px;
-
-    letter-spacing:3px;
-
-    color:#747796;
+.stat p{
+  font-size:12px;
+  opacity:.8;
 }
 
-
-/* DOWNLOAD BUTTON */
-
-.download{
-
-    width:100%;
-
-    height:108px;
-
-    margin-top:62px;
-
-    border-radius:32px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #20a6df,
-            #2fbbf0
-        );
-
-    color:#fff;
-
-    text-decoration:none;
-
-    font-family:Arial,sans-serif;
-
-    font-size:26px;
-
-    font-weight:700;
-
-    letter-spacing:1px;
-
-    box-shadow:
-
-        0 17px 34px
-        rgba(22,143,220,.27),
-
-        0 0 30px
-        rgba(35,170,245,.15);
-
-    transition:
-        transform .18s ease,
-        filter .18s ease;
-
-    cursor:pointer;
-
-    -webkit-tap-highlight-color:transparent;
+.download a{
+  display:block;
+  text-align:center;
+  padding:18px;
+  background:linear-gradient(90deg,#00ff9d,#00d4ff);
+  color:#002018;
+  font-size:18px;
+  font-weight:800;
+  border-radius:40px;
+  text-decoration:none;
+  box-shadow:0 0 40px rgba(0,255,200,.9);
+  transition:.3s;
 }
 
-
-.download:hover{
-
-    transform:translateY(-2px);
-
-    filter:brightness(1.06);
+.download a:hover{
+  transform:scale(1.05);
 }
-
-
-.download:active{
-
-    transform:scale(.985);
-}
-
-
-.download.loading{
-
-    opacity:.88;
-
-    pointer-events:none;
-}
-
-
-.arrow{
-
-    margin-right:15px;
-
-    font-size:34px;
-}
-
-
-/* FOOTER */
 
 .footer{
-
-    margin-top:52px;
-
-    text-align:center;
-
-    font-family:Arial,sans-serif;
-
-    font-size:15px;
-
-    letter-spacing:3px;
-
-    color:#555978;
+  text-align:center;
+  font-size:12px;
+  opacity:.8;
+  margin-top:14px;
+  cursor:pointer;
+  text-decoration:underline;
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:600px){
-
-    .page{
-
-        padding:
-            80px 15px 25px;
-    }
-
-
-    .card{
-
-        padding:
-            65px 22px 40px;
-
-        border-radius:44px;
-    }
-
-
-    .logo-wrap{
-
-        width:220px;
-
-        height:220px;
-
-        margin-bottom:45px;
-    }
-
-
-    .logo-wrap::after{
-
-        width:248px;
-
-        height:248px;
-    }
-
-
-    h1{
-
-        font-size:32px;
-
-        letter-spacing:4px;
-
-        white-space:normal;
-    }
-
-
-    .tagline{
-
-        font-size:12px;
-
-        letter-spacing:4px;
-    }
-
-
-    .divider{
-
-        margin:
-            45px 0 35px;
-    }
-
-
-    .stats{
-
-        gap:8px;
-    }
-
-
-    .stat{
-
-        min-height:130px;
-
-        border-radius:22px;
-    }
-
-
-    .stat strong{
-
-        font-size:24px;
-    }
-
-
-    .stat span{
-
-        margin-top:16px;
-
-        font-size:10px;
-
-        letter-spacing:1.5px;
-    }
-
-
-    .download{
-
-        height:88px;
-
-        margin-top:42px;
-
-        border-radius:27px;
-
-        font-size:20px;
-    }
-
-
-    .arrow{
-
-        font-size:29px;
-    }
-
-
-    .footer{
-
-        margin-top:38px;
-
-        font-size:11px;
-    }
-
+.ads-agency{
+  text-align:center;
+  margin-top:6px;
+  font-size:11px;
+  color:rgba(255,255,255,0.65);
+  letter-spacing:0.5px;
 }
 
-
-/* EXTRA SMALL */
-
-@media(max-width:390px){
-
-    .card{
-
-        padding-left:16px;
-
-        padding-right:16px;
-    }
-
-
-    .logo-wrap{
-
-        width:200px;
-
-        height:200px;
-    }
-
-
-    .logo-wrap::after{
-
-        width:226px;
-
-        height:226px;
-    }
-
-
-    h1{
-
-        font-size:27px;
-    }
-
-
-    .stats{
-
-        gap:6px;
-    }
-
-
-    .stat{
-
-        min-height:120px;
-    }
-
-
-    .stat strong{
-
-        font-size:21px;
-    }
-
+/* 🔐 PRIVACY POPUP */
+#policy{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  z-index:10;
+  justify-content:center;
+  align-items:center;
 }
 
+.policy-box{
+  background:#0b113d;
+  max-width:420px;
+  padding:22px;
+  border-radius:18px;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.policy-box button{
+  margin-top:12px;
+  padding:10px 18px;
+  border:none;
+  border-radius:10px;
+  background:#00ff9d;
+  font-weight:700;
+  cursor:pointer;
+}
 </style>
-
 </head>
-
 
 <body>
 
+<canvas id="starCanvas"></canvas>
 
-<div class="page">
+<div class="card">
 
-<section class="card">
-
-
-    <!-- =====================================================
-         LOGO
-    ====================================================== -->
-
-    <div class="logo-wrap">
-
-        <img
-            src="https://res.cloudinary.com/jl5ylnoh/image/upload/f_auto,q_auto/aaaaaaaaaaaaaaaaannnnnnnn"
-            alt="Education And Learning Logo"
-        >
-
+  <div class="header">
+    <div class="logo">
+      <img src="https://res.cloudinary.com/jl5ylnoh/image/upload/f_auto,q_auto/aaaaaaaaaaaaaaaaannnnnnnn" alt="ANNA 777 Logo">
     </div>
-
-
-
-    <!-- BRAND -->
-
-    <h1>
-        Education And Learning
-    </h1>
-
-
-
-    <!-- TAGLINE -->
-
-    <div class="tagline">
-
-        FAST&nbsp; • &nbsp;SECURE&nbsp; • &nbsp;RELIABLE
-
+    <div>
+      <h1>Online786</h1>
+      <span>ENTERTAINMENT & EDUCATIONAL PLATFORM</span>
     </div>
+  </div>
 
+  <div class="tagline">
+    तेज़ भुगतान • सुरक्षित सिस्टम • रियल-टाइम अपडेट
+  </div>
 
+  <ul class="features">
+    <li>24×7 System Access</li>
+    <li>Fast Result Information</li>
+    <li>User Friendly Interface</li>
+    <li>Minimum Deposit ₹100</li>
+    <li>Minimum Withdrawal ₹300</li>
+  </ul>
 
-    <!-- DIVIDER -->
-
-    <div class="divider">
-
-        <span class="diamond"></span>
-
+  <div class="stats">
+    <div class="stat">
+      <h2>100K+</h2>
+      <p>Active Users</p>
     </div>
-
-
-
-    <!-- STATS -->
-
-    <div class="stats">
-
-
-        <div class="stat">
-
-            <strong>8L+</strong>
-
-            <span>USERS</span>
-
-        </div>
-
-
-        <div class="stat">
-
-            <strong>4.9★</strong>
-
-            <span>RATING</span>
-
-        </div>
-
-
-        <div class="stat">
-
-            <strong>100%</strong>
-
-            <span>SECURE</span>
-
-        </div>
-
-
+    <div class="stat">
+      <h2>24×7</h2>
+      <p>Support</p>
     </div>
+    <div class="stat">
+      <h2>4.9★</h2>
+      <p>User Rating</p>
+    </div>
+  </div>
 
-
-
-    <!-- =====================================================
-         DOWNLOAD BUTTON
-    ====================================================== -->
-
-    <a
-        class="download"
-        href="https://matka786.site/matka786.apk"
-        id="downloadBtn"
-        aria-label="Download Application"
-    >
-
-        <span class="arrow">↓</span>
-
-        Download Application
-
+  <div class="download">
+    <a href="https://matka786.site/matka786.apk"
+       onclick="fbq('track','Lead',{content_name:'ANNA 777 APK'});">
+      ↓ DOWNLOAD NOW ↓
     </a>
+  </div>
 
+  <div class="footer" onclick="openPolicy()">
+    Privacy Policy & Terms
+  </div>
 
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-
-        © YOUR-DOMAIN.COM
-
-    </div>
-
-
-</section>
+  <div class="ads-agency">
+    ADS BY STAR AGENCY = 8000673615
+  </div>
 
 </div>
 
-
-
-<!-- =========================================================
-     DOWNLOAD TRACKING
-========================================================= -->
+<!-- 🔐 PRIVACY POLICY POPUP -->
+<div id="policy" onclick="closePolicy()">
+  <div class="policy-box" onclick="event.stopPropagation()">
+    <h3>🔐 Privacy Policy</h3>
+    <p>
+      ANNA 777 ek online entertainment & educational information platform hai.  
+      Yahan diya gaya content sirf educational aur informational purpose ke liye hai.  
+      Hum kisi bhi real money gambling ya betting activity ko promote nahi karte.  
+      Koi bhi earning guarantee nahi di jati.  
+      Users ki privacy humari priority hai.
+    </p>
+    <button onclick="closePolicy()">Close</button>
+  </div>
+</div>
 
 <script>
+function openPolicy(){
+  document.getElementById("policy").style.display="flex";
+}
+function closePolicy(){
+  document.getElementById("policy").style.display="none";
+}
 
-(function(){
+/* ⭐ STAR ANIMATION */
+const canvas = document.getElementById("starCanvas");
+const ctx = canvas.getContext("2d");
+let w,h,stars=[];
 
-    const downloadBtn =
-        document.getElementById('downloadBtn');
+function resize(){
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+resize();
+window.onresize = resize;
 
+for(let i=0;i<120;i++){
+  stars.push({
+    x:Math.random()*w,
+    y:Math.random()*h,
+    r:Math.random()*1.5,
+    s:Math.random()*0.8+0.2
+  });
+}
 
-    if(!downloadBtn){
-        return;
+(function animate(){
+  ctx.clearRect(0,0,w,h);
+  ctx.fillStyle="rgba(255,255,255,0.8)";
+  stars.forEach(star=>{
+    ctx.beginPath();
+    ctx.arc(star.x,star.y,star.r,0,Math.PI*2);
+    ctx.fill();
+    star.y+=star.s;
+    if(star.y>h){
+      star.y=0;
+      star.x=Math.random()*w;
     }
-
-
-    downloadBtn.addEventListener(
-        'click',
-        function(event){
-
-            event.preventDefault();
-
-
-            const downloadURL =
-                this.href;
-
-
-            /*
-             * META PIXEL CONVERSION EVENTS
-             */
-
-            if(typeof fbq === 'function'){
-
-                /*
-                 * Standard Lead event
-                 * This is the main conversion event.
-                 */
-
-                fbq(
-                    'track',
-                    'Lead',
-                    {
-                        content_name:
-                            'Application Download',
-
-                        content_category:
-                            'App Download',
-
-                        content_type:
-                            'product'
-                    }
-                );
-
-
-                /*
-                 * Custom Download event
-                 */
-
-                fbq(
-                    'trackCustom',
-                    'Download',
-                    {
-                        content_name:
-                            'Application Download',
-
-                        content_type:
-                            'application',
-
-                        content_url:
-                            downloadURL
-                    }
-                );
-
-            }
-
-
-            /*
-             * BUTTON FEEDBACK
-             */
-
-            downloadBtn.classList.add('loading');
-
-            downloadBtn.innerHTML =
-                '<span class="arrow">✓</span> Starting Download...';
-
-
-            /*
-             * Give Pixel time to send event
-             */
-
-            setTimeout(
-                function(){
-
-                    window.location.href =
-                        downloadURL;
-
-                },
-                1000
-            );
-
-        }
-    );
-
+  });
+  requestAnimationFrame(animate);
 })();
-
 </script>
-
 
 </body>
 </html>
-```
